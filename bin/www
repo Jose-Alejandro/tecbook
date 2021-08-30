@@ -1,0 +1,126 @@
+#!/usr/bin/env node
+
+/**
+ * Module dependencies.
+ */
+
+var app = require('../app');
+var debug = require('debug')('tecbook:server');
+var http = require('http');
+var db = require('../db/db.connection');
+var users = require('../db/db.users');
+var feed = require('../db/db.feedback');
+var hobies = require('../db/db.hobbies');
+var know = require('../db/db.knowledges');
+var langs = require('../db/db.languages');
+var oknow = require('../db/db.otherKnowledge');
+var performance = require('../db/db.performance');
+var pEnvironments = require('../db/db.professionalEnvironments');
+var soft = require('../db/db.softskills');
+var studies = require('../db/db.studies');
+var techs = require('../db/db.technologies');
+var connectRequest = require('../db/db.connectRequest');
+
+/**
+ * Get port from environment and store in Express.
+ */
+
+var port = normalizePort(process.env.PORT || '3000');
+app.set('port', port);
+
+/**
+ * Create HTTP server.
+ */
+
+var server = http.createServer(app);
+const connectToDB = async () => {
+	try {
+		await users.sync({ alter: true });
+		await feed.sync({ alter: true });
+		await hobies.sync({ alter: true });
+		await know.sync({ alter: true });
+		await langs.sync({ alter: true });
+		await oknow.sync({ alter: true });
+		await performance.sync({ alter: true });
+		await pEnvironments.sync({ alter: true });
+		await soft.sync({ alter: true });
+		await studies.sync({ alter: true });
+		await techs.sync({ alter: true });
+		await connectRequest.sync({ alter: true });
+
+		await db.authenticate();
+		console.log('Connected to Database...');
+	} catch (error) {
+		console.error('Conection to Database failed: ' + error.message);
+	}
+};
+
+connectToDB();
+
+/**
+ * Listen on provided port, on all network interfaces.
+ */
+
+server.listen(port);
+server.on('error', onError);
+server.on('listening', onListening);
+
+/**
+ * Normalize a port into a number, string, or false.
+ */
+
+function normalizePort(val) {
+	var port = parseInt(val, 10);
+
+	if (isNaN(port)) {
+		// named pipe
+		return val;
+	}
+
+	if (port >= 0) {
+		// port number
+		return port;
+	}
+
+	return false;
+}
+
+/**
+ * Event listener for HTTP server "error" event.
+ */
+
+function onError(error) {
+	if (error.syscall !== 'listen') {
+		throw error;
+	}
+
+	var bind = typeof port === 'string'
+		? 'Pipe ' + port
+		: 'Port ' + port;
+
+	// handle specific listen errors with friendly messages
+	switch (error.code) {
+		case 'EACCES':
+			console.error(bind + ' requires elevated privileges');
+			process.exit(1);
+			break;
+		case 'EADDRINUSE':
+			console.error(bind + ' is already in use');
+			process.exit(1);
+			break;
+		default:
+			throw error;
+	}
+}
+
+/**
+ * Event listener for HTTP server "listening" event.
+ */
+
+function onListening() {
+	var addr = server.address();
+	var bind = typeof addr === 'string'
+		? 'pipe ' + addr
+		: 'port ' + addr.port;
+	debug('Listening on ' + bind);
+}

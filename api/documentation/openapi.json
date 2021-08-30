@@ -1,0 +1,1126 @@
+{
+	"openapi": "3.0.1",
+	"info": {
+		"title": "TecBook",
+		"description": "API definition for Tecla Social Network",
+		"version": "1.0.0"
+	},
+	"servers": [
+		{
+			"url": "http://localhost:3030"
+		}
+	],
+	"paths": {
+		"/users/teclers/{id}/hobbies": {
+			"parameters": [
+				{
+					"name": "id",
+					"in": "path",
+					"description": "ID of tecler to apply post or get info",
+					"required": true,
+					"schema": {
+						"type": "integer",
+						"format": "int64"
+					}
+				}
+			],
+			"get": {
+				"tags": [
+					"Hobbies"
+				],
+				"description": "",
+				"responses": {
+					"200": {
+						"description": "",
+						"content": {
+							"application/json; charset=utf-8": {
+								"schema": {
+									"type": "string"
+								},
+								"examples": {}
+							}
+						}
+					}
+				},
+				"servers": [
+					{
+						"url": "http://localhost:3030"
+					}
+				]
+			},
+			"post": {
+				"tags": [
+					"Hobbies"
+				],
+				"description": "",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "object",
+								"properties": {
+									"hobbie": {
+										"type": "string"
+									},
+									"id_user": {
+										"type": "integer"
+									}
+								}
+							},
+							"examples": {
+								"0": {
+									"value": "{\n\t\"id_user\": 4,\n\t\"hobbie\": \"listening to the music\"\n}"
+								}
+							}
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": "",
+						"content": {
+							"application/json; charset=utf-8": {
+								"schema": {
+									"type": "string"
+								},
+								"examples": {}
+							}
+						}
+					}
+				},
+				"servers": [
+					{
+						"url": "http://localhost:3030"
+					}
+				]
+			},
+			"servers": [
+				{
+					"url": "http://localhost:3030"
+				}
+			]
+		},
+		"/users/teclers/{id}/performance": {
+			"parameters": [
+				{
+					"name": "id",
+					"in": "path",
+					"description": "ID of tecler to apply post or get info",
+					"required": true,
+					"schema": {
+						"type": "integer",
+						"format": "int64"
+					}
+				}
+			],
+			"get": {
+				"tags": [
+					"Performance"
+				],
+				"description": "",
+				"responses": {
+					"200": {
+						"description": "",
+						"content": {
+							"application/json; charset=utf-8": {
+								"schema": {
+									"type": "string"
+								},
+								"examples": {}
+							}
+						}
+					}
+				},
+				"servers": [
+					{
+						"url": "http://localhost:3030"
+					}
+				]
+			},
+			"post": {
+				"tags": [
+					"Performance"
+				],
+				"description": "",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "object",
+								"properties": {
+									"name": {
+										"type": "string"
+									},
+									"rating": {
+										"type": "integer"
+									},
+									"id_user": {
+										"type": "integer"
+									}
+								}
+							},
+							"examples": {
+								"0": {
+									"value": "{\n\t\"id_user\": 1,\n\t\"name\": \"Velocidad de entrega \",\n\t\"rating\":5\n}"
+								}
+							}
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": "",
+						"content": {
+							"application/json; charset=utf-8": {
+								"schema": {
+									"type": "string"
+								},
+								"examples": {}
+							}
+						}
+					}
+				},
+				"servers": [
+					{
+						"url": "http://localhost:3030"
+					}
+				]
+			},
+			"servers": [
+				{
+					"url": "http://localhost:3030"
+				}
+			]
+		},
+		"/users/teclers/{id}/studies": {
+			"parameters": [
+				{
+					"name": "id",
+					"in": "path",
+					"description": "ID of tecler to apply post or get info",
+					"required": true,
+					"schema": {
+						"type": "integer",
+						"format": "int64"
+					}
+				}
+			],
+			"get": {
+				"tags": [
+					"Studies"
+				],
+				"description": "",
+				"responses": {
+					"200": {
+						"description": "",
+						"content": {
+							"application/json; charset=utf-8": {
+								"schema": {
+									"type": "string"
+								},
+								"examples": {}
+							}
+						}
+					}
+				},
+				"servers": [
+					{
+						"url": "http://localhost:3030"
+					}
+				]
+			},
+			"post": {
+				"tags": [
+					"Studies"
+				],
+				"description": "",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "object",
+								"properties": {
+									"country": {
+										"type": "string"
+									},
+									"school": {
+										"type": "string"
+									},
+									"degree": {
+										"type": "string"
+									},
+									"id_user": {
+										"type": "integer"
+									}
+								}
+							},
+							"examples": {
+								"0": {
+									"value": "{\n\t\"id_user\": 4,\n\t\"degree\": \"Technician in bakery\",\n\t\"school\": \"PolyThecnique du France\",\n\t\"country\": \"Frace\"\n}"
+								}
+							}
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": "",
+						"content": {
+							"application/json; charset=utf-8": {
+								"schema": {
+									"type": "string"
+								},
+								"examples": {}
+							}
+						}
+					}
+				},
+				"servers": [
+					{
+						"url": "http://localhost:3030"
+					}
+				]
+			},
+			"servers": [
+				{
+					"url": "http://localhost:3030"
+				}
+			]
+		},
+		"/users/teclers/{id}/recived_connect": {
+			"parameters": [
+				{
+					"name": "id",
+					"in": "path",
+					"description": "ID of tecler to apply post or get info",
+					"required": true,
+					"schema": {
+						"type": "integer",
+						"format": "int64"
+					}
+				}
+			],
+			"get": {
+				"tags": [
+					"Recieved connection requests"
+				],
+				"description": "",
+				"responses": {
+					"200": {
+						"description": "",
+						"content": {
+							"application/json; charset=utf-8": {
+								"schema": {
+									"type": "string"
+								},
+								"examples": {}
+							}
+						}
+					}
+				},
+				"servers": [
+					{
+						"url": "http://localhost:3030"
+					}
+				]
+			},
+			"servers": [
+				{
+					"url": "http://localhost:3030"
+				}
+			]
+		},
+		"/users/teclers/{id}/softskills": {
+			"parameters": [
+				{
+					"name": "id",
+					"in": "path",
+					"description": "ID of tecler to apply post or get info",
+					"required": true,
+					"schema": {
+						"type": "integer",
+						"format": "int64"
+					}
+				}
+			],
+			"get": {
+				"tags": [
+					"Softskills"
+				],
+				"description": "",
+				"responses": {
+					"200": {
+						"description": "",
+						"content": {
+							"application/json; charset=utf-8": {
+								"schema": {
+									"type": "string"
+								},
+								"examples": {}
+							}
+						}
+					}
+				},
+				"servers": [
+					{
+						"url": "http://localhost:3030"
+					}
+				]
+			},
+			"post": {
+				"tags": [
+					"Softskills"
+				],
+				"description": "",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "object",
+								"properties": {
+									"name": {
+										"type": "string"
+									},
+									"rating": {
+										"type": "integer"
+									},
+									"id_user": {
+										"type": "integer"
+									}
+								}
+							},
+							"examples": {
+								"0": {
+									"value": "{\n\t\"id_user\": 1,\n\t\"name\": \"Comprometido\",\n\t\"rating\":3\n}"
+								}
+							}
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": "",
+						"content": {
+							"application/json; charset=utf-8": {
+								"schema": {
+									"type": "string"
+								},
+								"examples": {}
+							}
+						}
+					}
+				},
+				"servers": [
+					{
+						"url": "http://localhost:3030"
+					}
+				]
+			},
+			"servers": [
+				{
+					"url": "http://localhost:3030"
+				}
+			]
+		},
+		"/users/teclers/{id}/extraknowledge": {
+			"parameters": [
+				{
+					"name": "id",
+					"in": "path",
+					"description": "ID of tecler to apply post or get info",
+					"required": true,
+					"schema": {
+						"type": "integer",
+						"format": "int64"
+					}
+				}
+			],
+			"get": {
+				"tags": [
+					"Extra Knowledges"
+				],
+				"description": "",
+				"responses": {
+					"200": {
+						"description": "",
+						"content": {
+							"application/json; charset=utf-8": {
+								"schema": {
+									"type": "string"
+								},
+								"examples": {}
+							}
+						}
+					}
+				},
+				"servers": [
+					{
+						"url": "http://localhost:3030"
+					}
+				]
+			},
+			"post": {
+				"tags": [
+					"Extra Knowledges"
+				],
+				"description": "",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "object",
+								"properties": {
+									"name": {
+										"type": "string"
+									},
+									"rating": {
+										"type": "integer"
+									},
+									"id_user": {
+										"type": "integer"
+									}
+								}
+							},
+							"examples": {
+								"0": {
+									"value": "{\n\t\"id_user\": 1,\n\t\"name\": \"piano carrying\",\n\t\"rating\": 5\n}"
+								}
+							}
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": "",
+						"content": {
+							"application/json; charset=utf-8": {
+								"schema": {
+									"type": "string"
+								},
+								"examples": {}
+							}
+						}
+					}
+				},
+				"servers": [
+					{
+						"url": "http://localhost:3030"
+					}
+				]
+			},
+			"servers": [
+				{
+					"url": "http://localhost:3030"
+				}
+			]
+		},
+		"/users/teclers/{id}/technologies": {
+			"parameters": [
+				{
+					"name": "id",
+					"in": "path",
+					"description": "ID of tecler to apply post or get info",
+					"required": true,
+					"schema": {
+						"type": "integer",
+						"format": "int64"
+					}
+				}
+			],
+			"get": {
+				"tags": [
+					"Technologies"
+				],
+				"description": "",
+				"responses": {
+					"200": {
+						"description": "",
+						"content": {
+							"application/json; charset=utf-8": {
+								"schema": {
+									"type": "string"
+								},
+								"examples": {}
+							}
+						}
+					}
+				},
+				"servers": [
+					{
+						"url": "http://localhost:3030"
+					}
+				]
+			},
+			"post": {
+				"tags": [
+					"Technologies"
+				],
+				"description": "",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "object",
+								"properties": {
+									"name": {
+										"type": "string"
+									},
+									"rating": {
+										"type": "integer"
+									},
+									"id_user": {
+										"type": "integer"
+									}
+								}
+							},
+							"examples": {
+								"0": {
+									"value": "{\n\t\"id_user\": 1,\n\t\"name\": \"Frontend\",\n\t\"rating\":4\n}"
+								}
+							}
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": "",
+						"content": {
+							"application/json; charset=utf-8": {
+								"schema": {
+									"type": "string"
+								},
+								"examples": {}
+							}
+						}
+					}
+				},
+				"servers": [
+					{
+						"url": "http://localhost:3030"
+					}
+				]
+			},
+			"servers": [
+				{
+					"url": "http://localhost:3030"
+				}
+			]
+		},
+		"/users/teclers/{id}/profesionalEnv": {
+			"parameters": [
+				{
+					"name": "id",
+					"in": "path",
+					"description": "ID of tecler to apply post or get info",
+					"required": true,
+					"schema": {
+						"type": "integer",
+						"format": "int64"
+					}
+				}
+			],
+			"get": {
+				"tags": [
+					"Professional Environments"
+				],
+				"description": "",
+				"responses": {
+					"200": {
+						"description": "",
+						"content": {
+							"application/json; charset=utf-8": {
+								"schema": {
+									"type": "string"
+								},
+								"examples": {}
+							}
+						}
+					}
+				},
+				"servers": [
+					{
+						"url": "http://localhost:3030"
+					}
+				]
+			},
+			"post": {
+				"tags": [
+					"Professional Environments"
+				],
+				"description": "",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "object",
+								"properties": {
+									"name": {
+										"type": "string"
+									},
+									"rating": {
+										"type": "integer"
+									},
+									"id_user": {
+										"type": "integer"
+									}
+								}
+							},
+							"examples": {
+								"0": {
+									"value": "{\n\t\"id_user\": 1,\n\t\"name\": \"Versionado - Github\",\n\t\"rating\":3\n}"
+								}
+							}
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": "",
+						"content": {
+							"application/json; charset=utf-8": {
+								"schema": {
+									"type": "string"
+								},
+								"examples": {}
+							}
+						}
+					}
+				},
+				"servers": [
+					{
+						"url": "http://localhost:3030"
+					}
+				]
+			},
+			"servers": [
+				{
+					"url": "http://localhost:3030"
+				}
+			]
+		},
+		"/users/teclers/{id}/languages": {
+			"parameters": [
+				{
+					"name": "id",
+					"in": "path",
+					"description": "ID of tecler to apply post or get info",
+					"required": true,
+					"schema": {
+						"type": "integer",
+						"format": "int64"
+					}
+				}
+			],
+			"get": {
+				"tags": [
+					"Languages"
+				],
+				"description": "",
+				"responses": {
+					"200": {
+						"description": "",
+						"content": {
+							"application/json; charset=utf-8": {
+								"schema": {
+									"type": "string"
+								},
+								"examples": {}
+							}
+						}
+					}
+				},
+				"servers": [
+					{
+						"url": "http://localhost:3030"
+					}
+				]
+			},
+			"post": {
+				"tags": [
+					"Languages"
+				],
+				"description": "",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "object",
+								"properties": {
+									"level": {
+										"type": "string"
+									},
+									"id_user": {
+										"type": "integer"
+									},
+									"language_name": {
+										"type": "string"
+									}
+								}
+							},
+							"examples": {
+								"0": {
+									"value": "{\n\t\"id_user\": 4,\n\t\"language_name\": \"Español\",\n\t\"level\":\"Nativo\"\n}"
+								}
+							}
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": "",
+						"content": {
+							"application/json; charset=utf-8": {
+								"schema": {
+									"type": "string"
+								},
+								"examples": {}
+							}
+						}
+					}
+				},
+				"servers": [
+					{
+						"url": "http://localhost:3030"
+					}
+				]
+			},
+			"servers": [
+				{
+					"url": "http://localhost:3030"
+				}
+			]
+		},
+		"/users/teclers/{id}/feedback": {
+			"parameters": [
+				{
+					"name": "id",
+					"in": "path",
+					"description": "ID of tecler to apply post or get info",
+					"required": true,
+					"schema": {
+						"type": "integer",
+						"format": "int64"
+					}
+				}
+			],
+			"get": {
+				"tags": [
+					"Feedback"
+				],
+				"description": "",
+				"responses": {
+					"200": {
+						"description": "",
+						"content": {
+							"application/json; charset=utf-8": {
+								"schema": {
+									"type": "string"
+								},
+								"examples": {}
+							}
+						}
+					}
+				},
+				"servers": [
+					{
+						"url": "http://localhost:3030"
+					}
+				]
+			},
+			"post": {
+				"tags": [
+					"Feedback"
+				],
+				"description": "",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "object",
+								"properties": {
+									"comment": {
+										"type": "string"
+									},
+									"id_user": {
+										"type": "integer"
+									}
+								}
+							},
+							"examples": {
+								"0": {
+									"value": "{\n\t\"id_user\": 1,\n\t\"comment\": \"eres muy bueno\"\n}"
+								}
+							}
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": "",
+						"content": {
+							"application/json; charset=utf-8": {
+								"schema": {
+									"type": "string"
+								},
+								"examples": {}
+							}
+						}
+					}
+				},
+				"servers": [
+					{
+						"url": "http://localhost:3030"
+					}
+				]
+			},
+			"servers": [
+				{
+					"url": "http://localhost:3030"
+				}
+			]
+		},
+		"/users/teclers/{id}/connect": {
+			"parameters": [
+				{
+					"name": "id",
+					"in": "path",
+					"description": "ID of tecler to apply post or get info",
+					"required": true,
+					"schema": {
+						"type": "integer",
+						"format": "int64"
+					}
+				}
+			],
+			"get": {
+				"tags": [
+					"Connect with another tecler"
+				],
+				"description": "",
+				"responses": {
+					"200": {
+						"description": "",
+						"content": {
+							"application/json; charset=utf-8": {
+								"schema": {
+									"type": "string"
+								},
+								"examples": {}
+							}
+						}
+					}
+				},
+				"servers": [
+					{
+						"url": "http://localhost:3030"
+					}
+				]
+			},
+			"post": {
+				"tags": [
+					"Connect with another tecler"
+				],
+				"description": "",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "object",
+								"properties": {
+									"aproved": {
+										"type": "string"
+									},
+									"id_friend": {
+										"type": "integer"
+									}
+								}
+							},
+							"examples": {
+								"0": {
+									"value": "{\n\t\"id_friend\": 1,\n\t\"aproved\": \"false\"\n}"
+								}
+							}
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": "",
+						"content": {
+							"application/json; charset=utf-8": {
+								"schema": {
+									"type": "string"
+								},
+								"examples": {}
+							}
+						}
+					}
+				},
+				"servers": [
+					{
+						"url": "http://localhost:3030"
+					}
+				]
+			},
+			"servers": [
+				{
+					"url": "http://localhost:3030"
+				}
+			]
+		},
+		"/users/teclers/{id}/knowledge": {
+			"parameters": [
+				{
+					"name": "id",
+					"in": "path",
+					"description": "ID of tecler to apply post or get info",
+					"required": true,
+					"schema": {
+						"type": "integer",
+						"format": "int64"
+					}
+				}
+			],
+			"get": {
+				"tags": [
+					"Conocimiento"
+				],
+				"description": "",
+				"responses": {
+					"200": {
+						"description": "",
+						"content": {
+							"application/json; charset=utf-8": {
+								"schema": {
+									"type": "string"
+								},
+								"examples": {}
+							}
+						}
+					}
+				},
+				"servers": [
+					{
+						"url": "http://localhost:3030"
+					}
+				]
+			},
+			"post": {
+				"tags": [
+					"Conocimiento"
+				],
+				"description": "",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "object",
+								"properties": {
+									"name": {
+										"type": "string"
+									},
+									"rating": {
+										"type": "integer"
+									},
+									"id_user": {
+										"type": "integer"
+									}
+								}
+							},
+							"examples": {
+								"0": {
+									"value": "{\n\t\"id_user\": 1,\n\t\"name\": \"Seguridad\",\n\t\"rating\":4\n}"
+								}
+							}
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": "",
+						"content": {
+							"application/json; charset=utf-8": {
+								"schema": {
+									"type": "string"
+								},
+								"examples": {}
+							}
+						}
+					}
+				},
+				"servers": [
+					{
+						"url": "http://localhost:3030"
+					}
+				]
+			},
+			"servers": [
+				{
+					"url": "http://localhost:3030"
+				}
+			]
+		},
+		"/users/teclers/{id}/aproveRequest": {
+			"parameters": [
+				{
+					"name": "id",
+					"in": "path",
+					"description": "ID of tecler to apply post or get info",
+					"required": true,
+					"schema": {
+						"type": "integer",
+						"format": "int64"
+					}
+				}
+			],
+			"post": {
+				"tags": [
+					"Aproove Connection Request"
+				],
+				"description": "",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "object",
+								"properties": {
+									"id": {
+										"type": "integer"
+									}
+								}
+							},
+							"examples": {
+								"0": {
+									"value": "{\n\t\"id\":3\n}"
+								}
+							}
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": "",
+						"content": {
+							"application/json; charset=utf-8": {
+								"schema": {
+									"type": "string"
+								},
+								"examples": {}
+							}
+						}
+					}
+				},
+				"servers": [
+					{
+						"url": "http://localhost:3030"
+					}
+				]
+			},
+			"servers": [
+				{
+					"url": "http://localhost:3030"
+				}
+			]
+		}
+	}
+}
